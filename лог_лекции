@@ -1,0 +1,21 @@
+apt search package_name  поиск по названию и описанию
+	list package_name поиск по имени
+	show package_name показать инфу о пакете
+	autoremove удаляет все ненужные пакеты
+	
+dpkg -l список пакетов
+dpkg -i установка пакета (apt -f install)
+dpkg -r удаление
+
+
+iptables -L nv    //посмотреть таблицу правил
+iptables -P INPUT DROP   //политика по умолчанию
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT   //добавляем в конец (-A append ) для (-p) протокола tcp  для                                           (--dport) входящего порта действие "разрешить"
+
+iptables -A INPUT -i lo -j ACCEPT  //разрешаю трафик на локальном интерфейсе
+iptables -A INPUT -m state --state ESTABLISHED, RELATED -j ACCEPT //подключаем модуль (-m)  state и устанавливаем состояние  подключения (--state) в ESTABLISHED, RELATED 
+
+iptables -A INPUT -p -icmp -j ACCEPT 
+
+
+

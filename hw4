@@ -1,0 +1,21 @@
+1. # curl -f -s -S -L https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   # sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu kinetic stable"
+     (VERSION_CODENAME=kinetic)
+		
+2. # dpkg -i package.deb
+   # dpkg -r package.deb
+   
+3. # snap install gimp
+   # snap remove gimp
+   
+4. # crontab -e
+		3 * * * *   echo text" >> /home/user/cronTestFile
+
+5. # add-apt-repository ppa:alexey-smirnov/deadbeef
+   # apt update
+   # apt install deadbeef
+   # apt purge deadbeef
+
+6. crontab -e
+		*  5 * * 1 tar -zcf /var/backups/myHome.tgz ~/*
+   

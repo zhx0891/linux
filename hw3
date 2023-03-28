@@ -1,0 +1,26 @@
+cat > file1
+ctrl+D
+touch file2
+chmod u=rw,g=rw,o=r file1
+chmod 600 file2
+mkdir testdir
+chown -R user:group ~/testdir (меняем владельца и группу для  директории)
+chgrp -R www-data /home/testdir (меняем группу для  директории)
+
+useradd -s /bin/bash -m -d /home/newuser newuser
+adduser newuser2
+usermod -aG adm newuser
+usermod -g www-data newuser
+userdel newuser2
+
+adduser newroot
+usermod -aG sudo newroot
+visudo
+	%sudo ALL=(ALL:ALL) NOPASSWD:ALL
+
+
+groupadd newgroup
+addgroup -g 777 newgroup2
+groupdel newgroup
+	
+	
