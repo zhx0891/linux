@@ -1,0 +1,8 @@
+# apt install nginx
+
+# apt install apache2
+# nano /etc/apache2/ports.conf 
+		Listen 8080
+# nano /etc/apache2/sites-enabled/000-default.conf
+		<VirtualHost *:8080>
+#systemctl start apache2
