@@ -1,8 +1,37 @@
 # apt install nginx
+# apt install php8.1-fpm
+# nano /etc/nginx/sites-enabled/default
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		root /var/www/html;
+		fastcgi_pass unix:/run/php/php8.1-fpm.sock;			
+		}
+
+
 
 # apt install apache2
 # nano /etc/apache2/ports.conf 
 		Listen 8080
 # nano /etc/apache2/sites-enabled/000-default.conf
 		<VirtualHost *:8080>
-#systemctl start apache2
+# systemctl start apache2
+# nano /etc/nginx/sites-enabled/default
+	location / {
+		proxy_pass http://localhost:8080;
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Real-IP $remote_addr;
+		}
+	location ~* ^.+.(jpg|jpeg|gif|png|ico|css|zip|pdf|txt|tar|js)$ {
+		root /var/www/html;
+		}
+	#location ~ \.php$ {}
+
+# apt install libapache2-mod-php8.1 php8.1
+
+# apt install mysql-server-8.0
+sudo mysql
+	> CREATE DATABASE test;
+	> use test;
+	> CREATE TABLE testTable (i INT);
+	> INSERT INTO testTable (i) VALUES (123),(456)
