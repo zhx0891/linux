@@ -1,0 +1,24 @@
+cat  > file1
+cat  > file2
+cat file2 >> file2
+cat file2
+mv file2 file3
+mkdir forfiles
+mv f1 f3 forfiles/
+rm -r forfiles/
+ln -s file1 file3
+ln file1 file4
+ls -li
+cat file2
+   asdfasdf;lasdkfja;sdlkfjsadf
+cat file3
+  cat: file3: Нет такого файла или каталога
+
+mv file2 renamefile2
+mv file4 renamefile4
+ls -n renamefile2 lnf2
+ls -n renamefile4 lnf4
+mv lnf2 lnf4 otherCatalog\
+
+
+
