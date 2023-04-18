@@ -1,0 +1,13 @@
+#!/bin/bash
+directory=$1
+
+if [ -d $1 ]
+        then
+                cd $directory
+                rm -f *.bak
+                rm -f *.tmp
+                rm -f *.backup
+        else
+                echo "No dir"
+                exit 2
+fi

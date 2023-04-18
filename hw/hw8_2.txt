@@ -1,0 +1,22 @@
+#!/bin/bash
+directory=$1
+cd $1
+if [ -d $1 ]
+        then
+                for i in $directory/*
+                do
+                        if [ -f $i  ]
+                        then
+                                owner=$(stat -c %U $i)
+                                if [ -d $owner ]
+                                        then
+                                                mv $i  $PWD/$owner
+                                        else
+                                                mkdir $owner; mv $i $PWD/$owner;
+                                fi
+                        fi
+                done
+        else
+                echo "No dir"
+                exit 2
+fi

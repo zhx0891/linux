@@ -1,0 +1,54 @@
+echo $?  возврадет код ошибки выполнения последней команды
+ls -al | grep file
+ls -al | grep -P  '\.[cs]+'
+ps afx | grep ssh | grep -v pts
+var=$(ls -al)  вывод команды в переменную
+var=`ls -al` аналогично
+
+if [ выражение ]
+	then
+		действие если истинно
+	else
+		действие если ложно
+fi
+
+
+if [ -e file_name ]
+	then
+		echo "true"
+	else
+		echo "false"
+fi
+
+
+Цикл FOR
+
+for имяпеременной in значения
+do
+	тело цикла
+done
+
+for i in {01..24}
+do
+	echo $h
+done
+
+
+
+for (( c=1; c<=5; c++))
+do
+	echo "!!! $c"
+done 
+
+
+ цикл WHILE
+
+c = 10
+
+while [ $c -ge 0 ]
+do
+	echo  "Test"
+	let "c = c - 1"
+done
+
+  
